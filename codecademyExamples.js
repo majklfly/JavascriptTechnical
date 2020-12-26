@@ -1,29 +1,50 @@
+// FIBONACCI WITH MEMOAZING
+
+// const memo = {};
+
+// const fibonacci = num => {
+//   let returnValue;
+
+//   if (memo[num]) {
+//     returnValue = memo[num];
+//   } else if (num === 0 || num === 1) {
+//     returnValue = num;
+//   } else {
+//     returnValue = fibonacci(num - 1) + fibonacci(num - 2);
+//     memo[num] = returnValue;
+//   }
+//   return returnValue;
+// }
+
+// console.log(fibonacci(20));
+// console.log(fibonacci(200));
+
 // CAPTURING WATER PROBLEM TWO POINTER SOLUTION
 
-function efficientSolution(heights) {
-    let totalWater = 0;
-    let leftPointer = 0;
-    let rightPointer = heights.length - 1;
-    let leftBound = 0;
-    let rightBound = 0;
-    while (leftPointer < rightPointer) {
-        console.log("leftPointer", leftPointer);
-        console.log("rightPointer", rightPointer);
-        if (heights[leftPointer] <= heights[rightPointer]) {
-            leftBound = Math.max(heights[leftPointer], leftBound);
-            totalWater += leftBound - heights[leftPointer];
-            leftPointer++;
-        } else {
-            rightBound = Math.max(heights[rightPointer], rightBound);
-            totalWater += rightBound - heights[rightPointer];
-            rightPointer--;
-        }
-    }
-    return totalWater;
-}
+// function efficientSolution(heights) {
+//     let totalWater = 0;
+//     let leftPointer = 0;
+//     let rightPointer = heights.length - 1;
+//     let leftBound = 0;
+//     let rightBound = 0;
+//     while (leftPointer < rightPointer) {
+//         console.log("leftPointer", leftPointer);
+//         console.log("rightPointer", rightPointer);
+//         if (heights[leftPointer] <= heights[rightPointer]) {
+//             leftBound = Math.max(heights[leftPointer], leftBound);
+//             totalWater += leftBound - heights[leftPointer];
+//             leftPointer++;
+//         } else {
+//             rightBound = Math.max(heights[rightPointer], rightBound);
+//             totalWater += rightBound - heights[rightPointer];
+//             rightPointer--;
+//         }
+//     }
+//     return totalWater;
+// }
 
-const testArray = [4, 2, 1, 3, 0, 1, 2];
-console.log(efficientSolution(testArray));
+// const testArray = [4, 2, 1, 3, 0, 1, 2];
+// console.log(efficientSolution(testArray));
 
 // CAPTURING WATER PROBLEM NAIVE APPROACH
 
