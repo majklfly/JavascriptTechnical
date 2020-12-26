@@ -1,19 +1,43 @@
-// FIRST CHARACTER PROBLEM
-const first_recurring = (given_string) => {
-    const counts = {};
-    let theLetter = "not found";
-    const string_splitted = given_string.split("");
-    for (let i = 0; i < string_splitted.length; i++) {
-        if (string_splitted[i] in counts) {
-            theLetter = string_splitted[i];
-            break;
-        }
-        counts[string_splitted[i]] = true;
-    }
-    return theLetter;
-};
+// DECODE MESSAGE PROBLEM
 
-console.log(first_recurring("Milchal"));
+// let total = 0;
+
+// function Decode(array) {
+//     while (array.length > 0) {
+//         if (parseInt("" + array[0] + array[1]) <= 26) {
+//             console.log("worked");
+//             total += 2;
+//             array.shift();
+//             array.shift();
+//         } else {
+//             total += 1;
+//             array.shift();
+//             array.shift();
+//         }
+
+//         Decode(array);
+//     }
+// }
+
+// Decode([1, 2, 3, 4]);
+// console.log("total", total);
+
+// FIRST CHARACTER PROBLEM
+// const first_recurring = (given_string) => {
+//     const counts = {};
+//     let theLetter = "not found";
+//     const string_splitted = given_string.split("");
+//     for (let i = 0; i < string_splitted.length; i++) {
+//         if (string_splitted[i] in counts) {
+//             theLetter = string_splitted[i];
+//             break;
+//         }
+//         counts[string_splitted[i]] = true;
+//     }
+//     return theLetter;
+// };
+
+// console.log(first_recurring("Milchal"));
 
 // DYNAMIC KNAPSACK
 // const dynamicKnapsack = function(weightCap, weights, values) {
