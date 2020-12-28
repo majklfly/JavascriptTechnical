@@ -1,16 +1,42 @@
+// CAN SUM TABULATION SOLUTION
+
+// GRID TRAVELER TABULATION
+
+// const gridTraveler = (m, n) => {
+//     const table = Array(m + 1)
+//         .fill()
+//         .map(() => Array(n + 1).fill(0));
+//     table[1][1] = 1;
+//     for (let i = 0; i <= m; i++) {
+//         for (let j = 0; j <= m; j++) {
+//             const current = table[i][j];
+//             if (i + 1 <= m) table[i + 1][j] += current;
+//             if (j + 1 <= n) table[i][j + 1] += current;
+//         }
+//     }
+
+//     return table[m][n];
+// };
+
+// console.log(gridTraveler(1, 1));
+// console.log(gridTraveler(2, 3));
+// console.log(gridTraveler(3, 2));
+// console.log(gridTraveler(3, 3));
+// console.log(gridTraveler(18, 18));
+
 // FIB WITH TABULATION
 
-const fib = (n) => {
-    const table = Array(n + 1).fill(0);
-    table[1] = 1;
-    for (let i = 0; i <= n; i++) {
-        table[i + 1] += table[i];
-        table[i + 2] += table[i];
-    }
-    return table[n];
-};
+// const fib = (n) => {
+//     const table = Array(n + 1).fill(0);
+//     table[1] = 1;
+//     for (let i = 0; i <= n; i++) {
+//         table[i + 1] += table[i];
+//         table[i + 2] += table[i];
+//     }
+//     return table[n];
+// };
 
-console.log(fib(6));
+// console.log(fib(6));
 
 // ALL CONSTRUCT PROBLEM
 
