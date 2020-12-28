@@ -1,32 +1,93 @@
-// CAN CONSTRUCT STRING PROBLEM
+// ALL CONSTRUCT PROBLEM
 
-const canConstruct = (target, wordBank, memo = {}) => {
+const allConstruct = (target, wordBank, memo = {}) => {
     if (target in memo) return memo[target];
-    if (target === "") {
-        return true;
-    }
+    if (target === "") return [
+        []
+    ];
+
+    const result = [];
 
     for (let word of wordBank) {
         if (target.indexOf(word) === 0) {
             const suffix = target.slice(word.length);
-            if (canConstruct(suffix, wordBank, memo) === true) {
-                memo[target] = true;
-                return true;
-            }
+            const suffixWays = allConstruct(suffix, wordBank, memo);
+            const targetWays = suffixWays.map((way) => [word, ...way]);
+            result.push(...targetWays);
         }
     }
 
-    memo[target] = false;
-    return false;
+    memo[target] = result;
+    return result;
 };
 
-console.log(canConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd"]));
+console.log(allConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd"]));
 console.log(
-    canConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])
+    allConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])
 );
 console.log(
-    canConstruct("enterapotentpot", ["a", "p", "ent", "enter", "ot", "o", "t"])
+    allConstruct("enterapotentpot", ["a", "p", "ent", "enter", "ot", "o", "t"])
 );
+
+// COUNT CONSTRUCT PROBLEM
+
+// const countConstruct = (target, wordBank, memo = {}) => {
+//     if (target in memo) return memo[target];
+//     if (target === "") return 1;
+//     let total = 0;
+
+//     for (let word of wordBank) {
+//         if (target.indexOf(word) === 0) {
+//             const numWaysForRest = countConstruct(
+//                 target.slice(word.length),
+//                 wordBank,
+//                 memo
+//             );
+//             total += numWaysForRest;
+//         }
+//     }
+
+//     memo[target] = total;
+//     return total;
+// };
+
+// console.log(countConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd"]));
+// console.log(
+//     countConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])
+// );
+// console.log(
+//     countConstruct("enterapotentpot", ["a", "p", "ent", "enter", "ot", "o", "t"])
+// );
+
+// CAN CONSTRUCT STRING PROBLEM
+
+// const canConstruct = (target, wordBank, memo = {}) => {
+//     if (target in memo) return memo[target];
+//     if (target === "") {
+//         return true;
+//     }
+
+//     for (let word of wordBank) {
+//         if (target.indexOf(word) === 0) {
+//             const suffix = target.slice(word.length);
+//             if (canConstruct(suffix, wordBank, memo) === true) {
+//                 memo[target] = true;
+//                 return true;
+//             }
+//         }
+//     }
+
+//     memo[target] = false;
+//     return false;
+// };
+
+// console.log(canConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd"]));
+// console.log(
+//     canConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])
+// );
+// console.log(
+//     canConstruct("enterapotentpot", ["a", "p", "ent", "enter", "ot", "o", "t"])
+// );
 
 // BESTSUM PROBLEM
 
