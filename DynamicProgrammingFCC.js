@@ -1,33 +1,47 @@
-// ALL CONSTRUCT PROBLEM
+// FIB WITH TABULATION
 
-const allConstruct = (target, wordBank, memo = {}) => {
-    if (target in memo) return memo[target];
-    if (target === "") return [
-        []
-    ];
-
-    const result = [];
-
-    for (let word of wordBank) {
-        if (target.indexOf(word) === 0) {
-            const suffix = target.slice(word.length);
-            const suffixWays = allConstruct(suffix, wordBank, memo);
-            const targetWays = suffixWays.map((way) => [word, ...way]);
-            result.push(...targetWays);
-        }
+const fib = (n) => {
+    const table = Array(n + 1).fill(0);
+    table[1] = 1;
+    for (let i = 0; i <= n; i++) {
+        table[i + 1] += table[i];
+        table[i + 2] += table[i];
     }
-
-    memo[target] = result;
-    return result;
+    return table[n];
 };
 
-console.log(allConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd"]));
-console.log(
-    allConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])
-);
-console.log(
-    allConstruct("enterapotentpot", ["a", "p", "ent", "enter", "ot", "o", "t"])
-);
+console.log(fib(6));
+
+// ALL CONSTRUCT PROBLEM
+
+// const allConstruct = (target, wordBank, memo = {}) => {
+//     if (target in memo) return memo[target];
+//     if (target === "") return [
+//         []
+//     ];
+
+//     const result = [];
+
+//     for (let word of wordBank) {
+//         if (target.indexOf(word) === 0) {
+//             const suffix = target.slice(word.length);
+//             const suffixWays = allConstruct(suffix, wordBank, memo);
+//             const targetWays = suffixWays.map((way) => [word, ...way]);
+//             result.push(...targetWays);
+//         }
+//     }
+
+//     memo[target] = result;
+//     return result;
+// };
+
+// console.log(allConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd"]));
+// console.log(
+//     allConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])
+// );
+// console.log(
+//     allConstruct("enterapotentpot", ["a", "p", "ent", "enter", "ot", "o", "t"])
+// );
 
 // COUNT CONSTRUCT PROBLEM
 
