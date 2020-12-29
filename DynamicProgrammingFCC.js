@@ -1,31 +1,31 @@
 // ALL CONSTRUCT PROBLEM
 
-const allConstruct = (target, wordBank) => {
-    const table = Array(target.length + 1)
-        .fill()
-        .map(() => []);
-    table[0] = [
-        []
-    ];
-    for (let i = 0; i <= target.length; i++) {
-        for (let word of wordBank) {
-            if (target.slice(i, i + word.length) === word) {
-                const newCombination = table[i].map((subArray) => [...subArray, word]);
-                table[i + word.length].push(...newCombination);
-            }
-        }
-    }
+// const allConstruct = (target, wordBank) => {
+//     const table = Array(target.length + 1)
+//         .fill()
+//         .map(() => []);
+//     table[0] = [
+//         []
+//     ];
+//     for (let i = 0; i <= target.length; i++) {
+//         for (let word of wordBank) {
+//             if (target.slice(i, i + word.length) === word) {
+//                 const newCombination = table[i].map((subArray) => [...subArray, word]);
+//                 table[i + word.length].push(...newCombination);
+//             }
+//         }
+//     }
 
-    return table[target.length];
-};
+//     return table[target.length];
+// };
 
-console.log(allConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd"]));
-console.log(
-    allConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])
-);
-console.log(
-    allConstruct("enterapotentpot", ["a", "p", "ent", "enter", "ot", "o", "t"])
-);
+// console.log(allConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd"]));
+// console.log(
+//     allConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])
+// );
+// console.log(
+//     allConstruct("enterapotentpot", ["a", "p", "ent", "enter", "ot", "o", "t"])
+// );
 
 // COUNT CONSTRUCT PROBLEM
 
