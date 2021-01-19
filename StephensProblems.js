@@ -1,22 +1,59 @@
 
-function maxChars(string) {
-    const dictionary = {}
-    let maxValue = 0;
-    let maxChar = "";
+function chunk(array, size) {
+    let arr1 = [];
+    let arr2 = [];
 
-    const charArray = string.split("");
-    charArray.forEach(char => dictionary[char] = dictionary[char] + 1 || 1 )
-
-    for (char in dictionary) {
-        if (dictionary[char] > maxValue) {
-            maxValue = dictionary[char];
-            maxChar = char
+    array.forEach(value => {
+        if (arr2.length < size) {
+            arr2.push(value)
+        } else {
+            arr1.push(arr2)
+            arr2 = []
+            arr2.push(value)
         }
+        
+    })
+    if(arr2.length !== 0) {
+        arr1.push(arr2)
     }
-    return maxChar
+    return arr1
 }
 
-console.log(maxChars("Hello there"))
+console.log(chunk([1, 2, 3, 4, 5], 1))
+
+// function FizzBuzz(num) {
+//     for (let i = 1; i <= num; i++) {
+//         if (i % 3 === 0 && i % 5 === 0) {
+//             console.log("fizzBuzz")
+//         } else if (i % 3 === 0) {
+//             console.log("fizz")
+//         } else if (i % 5 === 0) {
+//             console.log("buzz")
+//         } else {
+//             console.log(i)
+//         }
+//     }
+// }
+// FizzBuzz(100)
+
+// function maxChars(string) {
+//     const dictionary = {}
+//     let maxValue = 0;
+//     let maxChar = "";
+
+//     const charArray = string.split("");
+//     charArray.forEach(char => dictionary[char] = dictionary[char] + 1 || 1 )
+
+//     for (char in dictionary) {
+//         if (dictionary[char] > maxValue) {
+//             maxValue = dictionary[char];
+//             maxChar = char
+//         }
+//     }
+//     return maxChar
+// }
+
+// console.log(maxChars("Hello there"))
 
 // function reverseInt(number) {
 //     const string = number.toString()
