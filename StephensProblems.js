@@ -1,25 +1,34 @@
 
-function chunk(array, size) {
-    let arr1 = [];
-    let arr2 = [];
-
-    array.forEach(value => {
-        if (arr2.length < size) {
-            arr2.push(value)
-        } else {
-            arr1.push(arr2)
-            arr2 = []
-            arr2.push(value)
-        }
-        
-    })
-    if(arr2.length !== 0) {
-        arr1.push(arr2)
-    }
-    return arr1
+function anagrams(stringA, stringB) {
+    //normalize strings
+    const normstrA = stringA.toLowerCase().match(/[a-z]/g).sort().join("")
+    const normstrB = stringB.toLowerCase().match(/[a-z]/g).sort().join("")
+    return normstrA === normstrB
 }
 
-console.log(chunk([1, 2, 3, 4, 5], 1))
+console.log(anagrams("rail safety", "fairy tales"))
+
+// function chunk(array, size) {
+//     let arr1 = [];
+//     let arr2 = [];
+
+//     array.forEach(value => {
+//         if (arr2.length < size) {
+//             arr2.push(value)
+//         } else {
+//             arr1.push(arr2)
+//             arr2 = []
+//             arr2.push(value)
+//         }
+        
+//     })
+//     if(arr2.length !== 0) {
+//         arr1.push(arr2)
+//     }
+//     return arr1
+// }
+
+// console.log(chunk([1, 2, 3, 4, 5], 1))
 
 // function FizzBuzz(num) {
 //     for (let i = 1; i <= num; i++) {
