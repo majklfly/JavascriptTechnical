@@ -1,22 +1,22 @@
 
 
-function evenOddSums(arr) {
-    let totalOdds = 0;
-    let totalEvens = 0;
+// function evenOddSums(arr) {
+//     let totalOdds = 0;
+//     let totalEvens = 0;
 
-    arr.forEach(number => {
-        if (number % 2 === 0) {
-            totalEvens += number;
-        } else {
-            totalOdds += number
-        }
-    })
+//     arr.forEach(number => {
+//         if (number % 2 === 0) {
+//             totalEvens += number;
+//         } else {
+//             totalOdds += number
+//         }
+//     })
 
-    return [totalOdds, totalEvens]
+//     return [totalOdds, totalEvens]
 
-}
+// }
 
-console.log(evenOddSums([50, 60, 60, 45, 71]))
+// console.log(evenOddSums([50, 60, 60, 45, 71]))
 
 // function missingLetters(string) {
 //     let compare = string.charCodeAt(0);
