@@ -1,5 +1,3 @@
-
-
 // function evenOddSums(arr) {
 //     let totalOdds = 0;
 //     let totalEvens = 0;
@@ -32,7 +30,6 @@
 //     return missing
 // }
 
-
 // returns "d"
 // console.log(missingLetters("abce"))
 
@@ -49,7 +46,7 @@
 //     })
 
 //     const sorted = arr2.sort((a, b) => a - b);
-    
+
 //     arr1.forEach((val, i) => sorted.splice(arr1[i], 0, -1))
 
 //     return sorted
@@ -111,7 +108,6 @@
 //     const sortedstr2 = cleanedstr2.split("").sort().join();
 
 //     return sortedstr1 === sortedstr2
-
 
 // }
 
