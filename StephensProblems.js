@@ -1,3 +1,18 @@
+// function fib(n, memo = {}) {
+//   if (n in memo) {
+//     return memo[n];
+//   }
+//   if (n < 2) {
+//     return n;
+//   }
+
+//   const result = fib(n - 1) + fib(n - 2);
+//   memo[n] = result;
+//   return result;
+// }
+
+// console.log(fib(30));
+
 // function matrix(n) {
 //   const results = [];
 
