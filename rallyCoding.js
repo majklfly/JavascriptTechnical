@@ -1,6 +1,5 @@
-const solve = (strArray) => {
-  const sorted = strArray.sort((a, b) => (a[1] > b[1] ? 1 : -1));
-  return sorted;
+const solve = (a, b, k) => {
+  return;
 };
 
-console.log(solve(["@Winston", "@James", "@Albert", "@Sally"]));
+console.log(solve(4, 16, 5));
