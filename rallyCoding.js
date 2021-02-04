@@ -1,15 +1,19 @@
-const solve = (strArg) => {
-  const result = [];
-  for (let i = 0; i < strArg.length; i++) {
-    if (
-      strArg[i] + strArg[i + 1] + strArg[i + 2] ===
-      strArg[i + 2] + strArg[i + 1] + strArg[i]
-    ) {
-      result.push(strArg[i] + strArg[i + 1] + strArg[i + 2]);
-      i++;
+const solve = (intArray, k) => {
+  const outerArray = [];
+  let innerArray = [];
+  let counter = 0;
+  intArray.forEach((num) => {
+    if (counter < k) {
+      innerArray.push(num);
+      counter++;
+    } else {
+      outerArray.push(Math.max(...innerArray));
+      innerArray = [num];
+      counter = 1;
     }
-  }
-  return result;
+  });
+  outerArray.push(Math.max(...innerArray));
+  return outerArray;
 };
 
-console.log(solve("rdrairekeaca"));
+console.log(solve([10, 9, 3, 6, 2, 8, 2, 0, 35], 3));
